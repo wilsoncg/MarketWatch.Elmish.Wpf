@@ -6,18 +6,29 @@
              xmlns:local="clr-namespace:WpfControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <ListView Name="marketListView" 
-                  ItemsSource="{Binding Markets}"                   
-                  AlternationCount="2"
-                  BorderThickness="0" Width="Auto"
-                  IsSynchronizedWithCurrentItem="True" AutomationProperties.AutomationId="MarketListGrid" >
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Market List" >
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="65"/>
-                    <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Path=Price}" Width="85" />
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </StackPanel>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="400" Margin="0,0,0,0.5">
+            <ListView Name="marketListView" 
+                      ItemsSource="{Binding Markets}"                   
+                      AlternationCount="2"
+                      BorderThickness="0" Width="Auto"
+                      IsSynchronizedWithCurrentItem="True" AutomationProperties.AutomationId="MarketListGrid" >
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Market List" >
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="65"/>
+                        <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Path=Price}" Width="85" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Username:" Margin="5"/>
+                <TextBlock Text="username" Margin="5"  Width="50"/>
+            </StackPanel>
+            <StackPanel>
+                <PasswordBox Width="300" PasswordChar="#"/>
+            </StackPanel>            
+        </StackPanel>
+    </DockPanel>
 </Window>
