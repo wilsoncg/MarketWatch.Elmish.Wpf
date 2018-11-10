@@ -25,7 +25,7 @@ module ListItem =
     "Price" |> Binding.oneWay (fun m -> m.Price)
   ] 
 
-module List =
+module MarketList =
 
  type Model = {
     Markets: list<ListItem.Market> }

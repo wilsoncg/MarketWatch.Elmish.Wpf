@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="App.fs" />
+    <Resource Include="MainWindow.xaml" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
@@ -71,6 +72,12 @@
     <Reference Include="FSharp.Core">
       <HintPath>packages\FSharp.Core.4.5.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
+    <Reference Include="FsXaml.Wpf">
+      <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="FsXaml.Wpf.TypeProvider">
+      <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.TypeProvider.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -81,14 +88,9 @@
       <HintPath>packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WpfControls\WpfControls.csproj">
-      <Name>WpfControls</Name>
-      <Project>{6652b769-4e93-4bbd-a2ab-48da43147bc7}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
