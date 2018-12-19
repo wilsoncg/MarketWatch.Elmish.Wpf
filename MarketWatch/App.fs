@@ -40,6 +40,7 @@ module MarketList =
  let update msg m =
     match msg with
     | UpdatePrice (id, price) -> { m with Markets = list.Cons ((ListItem.newMarket id price), m.Markets) }
+    | ParentMsg (id, msg) -> m
 
  let bindings model dispatch =
   [
