@@ -17,7 +17,8 @@
                       AutomationProperties.AutomationId="MarketListGrid" >
                 <ListView.View>
                     <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Market List" >
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="65"/>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" Width="65"/>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="100"/>
                         <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Path=Price}" Width="85" />
                     </GridView>
                 </ListView.View>
@@ -33,7 +34,7 @@
                 <StackPanel>
                     <TextBlock></TextBlock>
                 </StackPanel>
-            </DockPanel>            
+            </DockPanel>
         </StackPanel>
     </DockPanel>
 </Window>

@@ -13,35 +13,12 @@ module Window =
          .Timer(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0))
          .Timestamp()
          .Select(fun f -> f, Math.Sin(float f.Value))
-    //o.Subscribe(
-    //    fun (timestamp, value) -> 
-    //     MarketList.update(MarketList.Msg.UpdatePrice (1, decimal value)) |> ignore) |> ignore
-    //o.Subscribe(fun f -> 
-    //    match f with 
-    //    | (timestamp, value) -> MarketList.update(MarketList.Msg.UpdatePrice m)) |> ignore
-
-    //let timer initial =
-    //    let sub dispatch = dispatch o.Next
-    //        //window.setInterval(fun _ -> 
-    //        //    dispatch (Tick DateTime.Now)
-    //        //    , 1000) |> ignore
-    //    Cmd.ofSub sub
-    
-    //let timerTick dispatch =
-    //  let timer = new System.Timers.Timer(1000.)
-    //  timer.Elapsed.Add (fun _ -> 
-    //    let updateMsg =
-    //     let u = o.Next() |> Seq.toList
-    //     let timestamp, value = u.Head
-    //     (1, decimal value)
-    //    dispatch <| MarketList.Msg.UpdatePrice updateMsg
-    //  )
-    //  timer.Start()
 
     let timerTick dispatch =
         o.Subscribe(
-            fun (timestamp, value) -> 
-            dispatch <| MarketList.Msg.UpdatePrice (1, decimal value)) |> ignore        
+            fun (timestamp, price) -> 
+            let rounded = Math.Round(price, 2)
+            dispatch <| MarketList.Msg.UpdatePrice (1, decimal rounded)) |> ignore        
 
     [<EntryPoint; STAThread>]
     let main argv =
