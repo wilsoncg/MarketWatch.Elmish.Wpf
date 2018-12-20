@@ -14,12 +14,32 @@
                       BorderThickness="0" 
                       Width="Auto"
                       IsSynchronizedWithCurrentItem="True" 
-                      AutomationProperties.AutomationId="MarketListGrid" >
+                      AutomationProperties.AutomationId="MarketListGrid">                
                 <ListView.View>
-                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Market List" >
-                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}" Width="65"/>
-                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}" Width="100"/>
-                        <GridViewColumn Header="Price"  DisplayMemberBinding="{Binding Path=Price}" Width="85" />
+                    <GridView
+                            AllowsColumnReorder="true" 
+                            ColumnHeaderToolTip="Market List">
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="65">
+                            <GridViewColumnHeader 
+                                Command="{Binding ColumnHeaderClick}"
+                                CommandParameter="Id">
+                                Id
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Width="100">
+                            <GridViewColumnHeader 
+                                Command="{Binding ColumnHeaderClick}"
+                                CommandParameter="Name">
+                                Name
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Width="85">
+                            <GridViewColumnHeader 
+                                Command="{Binding ColumnHeaderClick}"
+                                CommandParameter="Price">
+                                Price
+                            </GridViewColumnHeader>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

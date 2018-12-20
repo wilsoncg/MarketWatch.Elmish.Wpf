@@ -27,6 +27,7 @@ module ListItem =
   ] 
 
 module MarketList =
+ open System.Windows.Forms
 
  type Model = {
     Markets: list<ListItem.Market> }
@@ -42,9 +43,10 @@ module MarketList =
 
  let updateElement list f = 
   list |> Seq.map f |> Seq.toList
-
+  
  type Msg =
     | UpdatePrice of int * decimal
+    | ColumnHeaderClick //of SortOrder
     | ParentMsg of int * Msg
 
  let update msg model =
@@ -56,6 +58,7 @@ module MarketList =
           {model with Markets = updateElement model.Markets (fun m -> if m.Id = id then market else m ) }
          | None -> 
           { model with Markets = model.Markets @ [ListItem.newMarket id price] }
+    | ColumnHeaderClick -> model
     | ParentMsg (id, msg) -> model
 
  let bindings model dispatch =
@@ -65,4 +68,5 @@ module MarketList =
         (fun cm -> cm.Id)
         (fun () -> ListItem.bindings ())
         ParentMsg
+    "ColumnHeaderClick" |> Binding.paramCmd (fun p m -> ColumnHeaderClick)
   ]

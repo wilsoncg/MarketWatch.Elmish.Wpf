@@ -18,7 +18,8 @@ module Window =
         o.Subscribe(
             fun (timestamp, price) -> 
             let rounded = Math.Round(price, 2)
-            dispatch <| MarketList.Msg.UpdatePrice (1, decimal rounded)) |> ignore        
+            let id = Random().Next(100)
+            dispatch <| MarketList.Msg.UpdatePrice (id, decimal rounded)) |> ignore        
 
     [<EntryPoint; STAThread>]
     let main argv =
