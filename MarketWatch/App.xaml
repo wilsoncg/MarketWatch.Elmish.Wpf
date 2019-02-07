@@ -1,9 +1,10 @@
-﻿<Application x:Class="MarketWatch.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:views="clr-namespace:MarketWatch.Views"
              xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
-             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz">
+             xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             StartupUri="MainWindow.xaml">
 
     <Application.Resources>
         <ResourceDictionary>

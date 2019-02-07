@@ -3,10 +3,13 @@ open System.Reactive
 open System.Reactive.Linq
 open Elmish
 open Elmish.WPF
+open FsXaml
+open MahApps.Metro.Controls
 open App
 
 module Window =
-    type MainWindow = FsXaml.XAML<"MainWindow.xaml">
+    type App = XAML<"App.xaml">
+    type MainWindow = MainWindow.MainWindow
 
     let o = 
         Observable
@@ -24,6 +27,7 @@ module Window =
     [<EntryPoint; STAThread>]
     let main argv =
       let window = MainWindow()
+      App().MainWindow <- window      
       Program.mkSimple MarketList.init MarketList.update MarketList.bindings 
       |> Program.withConsoleTrace
       |> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
