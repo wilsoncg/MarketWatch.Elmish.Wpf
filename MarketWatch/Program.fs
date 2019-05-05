@@ -28,9 +28,9 @@ module Window =
     let main argv =
       let window = MainWindow()
       App().MainWindow <- window      
-      Program.mkSimple MarketList.init MarketList.update MarketList.bindings 
+      Program.mkSimple MainWindow.init MainWindow.update MainWindow.bindings 
       |> Program.withConsoleTrace
-      |> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
+      //|> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
       |> Program.runWindowWithConfig
           { ElmConfig.Default with LogConsole = true }
           (window)
