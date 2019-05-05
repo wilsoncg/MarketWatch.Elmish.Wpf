@@ -34,9 +34,6 @@
             <TabItem Header="Tab No. 1" IsSelected="True">
                 <TextBlock>First tab</TextBlock>
             </TabItem>
-            <TabItem Header="Tab No. 2">
-                <TextBlock>Second tab</TextBlock>
-            </TabItem>
             <!--<dragablz:TabablzControl.HeaderItemTemplate>
                 <DataTemplate DataType="{x:Type ViewContainer}">
                     <TextBlock Margin="8,0,0,0" Text="{Binding Title}" />
@@ -49,4 +46,20 @@
             </TabControl.ContentTemplate>-->
         </dragablz:TabablzControl>
     </dockablz:Layout>
+
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout 
+                Header="Settings" 
+                Position="Right" 
+                Width="300"
+                IsOpen="{Binding FlyoutSettingsIsOpen}">
+                <Controls:ToggleSwitch 
+                    IsChecked="True"
+                    OnLabel="Enabled"
+                    OffLabel="Disabled"
+                    Style="{DynamicResource MahApps.Metro.Styles.ToggleSwitch.Win10}"></Controls:ToggleSwitch>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
 </Controls:MetroWindow>
