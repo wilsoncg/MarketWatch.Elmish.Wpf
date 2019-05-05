@@ -3,9 +3,10 @@ open System.Reactive
 open System.Reactive.Linq
 open Elmish
 open Elmish.WPF
-open App
+open ElmApp
 
 module Window =
+    type App = FsXaml.XAML<"App.xaml">
     type MainWindow = FsXaml.XAML<"MainWindow.xaml">
 
     let o = 
@@ -23,10 +24,10 @@ module Window =
 
     [<EntryPoint; STAThread>]
     let main argv =
-      let window = MainWindow()
+      App() |> ignore
       Program.mkSimple MarketList.init MarketList.update MarketList.bindings 
       |> Program.withConsoleTrace
       |> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
       |> Program.runWindowWithConfig
           { ElmConfig.Default with LogConsole = true }
-          (window)
+          (MainWindow())

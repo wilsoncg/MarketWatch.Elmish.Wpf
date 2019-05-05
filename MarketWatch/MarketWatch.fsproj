@@ -58,8 +58,8 @@
     <Resource Include="Views\TradesGrid.xaml" />
     <Compile Include="AssemblyInfo.fs" />
     <Resource Include="App.xaml" />
-    <Compile Include="App.fs" />
     <Resource Include="MainWindow.xaml" />
+    <Compile Include="ElmApp.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
