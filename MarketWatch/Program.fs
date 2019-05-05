@@ -25,9 +25,8 @@ module Window =
     [<EntryPoint; STAThread>]
     let main argv =
       App() |> ignore
-      Program.mkSimple MarketList.init MarketList.update MarketList.bindings 
+      Program.mkSimple Main.init Main.update Main.bindings 
       |> Program.withConsoleTrace
-      |> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
       |> Program.runWindowWithConfig
           { ElmConfig.Default with LogConsole = true }
           (MainWindow())

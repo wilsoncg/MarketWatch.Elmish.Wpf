@@ -1,6 +1,23 @@
 ﻿module ElmApp
-
 open Elmish.WPF
+
+module Main =
+ type Model = { DarkMode: bool }
+ let init() = {
+    DarkMode = false
+ }
+ 
+ type Msg =
+     | SettingsClick
+ 
+ let update msg model =
+    match msg with
+    | SettingsClick -> model
+
+ let bindings model dispatch =
+  [
+    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick)
+  ]
 
 module ListItem =
   
