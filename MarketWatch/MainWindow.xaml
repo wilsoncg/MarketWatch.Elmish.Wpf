@@ -35,7 +35,7 @@
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Markets" IsSelected="True">
-                <TextBlock>First tab</TextBlock>
+                <views:TradesGrid />
             </TabItem>
             <!--<dragablz:TabablzControl.HeaderItemTemplate>
                 <DataTemplate DataType="{x:Type ViewContainer}">
@@ -52,7 +52,7 @@
 
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <views:SettingsFlyout Theme="Dark" />
+            <views:SettingsFlyout Theme="Accent" />
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
 </Controls:MetroWindow>

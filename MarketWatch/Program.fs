@@ -27,8 +27,9 @@ module Window =
     let main argv =
       App() |> ignore
       SettingsFlyout() |> ignore
+      let window = MainWindow()
       Program.mkSimple Main.init Main.update Main.bindings 
       |> Program.withConsoleTrace
       |> Program.runWindowWithConfig
           { ElmConfig.Default with LogConsole = true }
-          (MainWindow())
+          (window)

@@ -12,7 +12,6 @@
     Header="Settings" 
     Position="Right" 
     Width="300"
-    Theme="Dark"
     IsOpen="{Binding SettingsFlyoutIsOpen}">
     <ScrollViewer>
         <StackPanel>
