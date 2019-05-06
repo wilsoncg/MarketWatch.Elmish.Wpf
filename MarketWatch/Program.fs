@@ -4,6 +4,7 @@ open System.Reactive.Linq
 open Elmish
 open Elmish.WPF
 open ElmApp
+open Views
 
 module Window =
     type App = FsXaml.XAML<"App.xaml">
@@ -25,6 +26,7 @@ module Window =
     [<EntryPoint; STAThread>]
     let main argv =
       App() |> ignore
+      SettingsFlyout() |> ignore
       Program.mkSimple Main.init Main.update Main.bindings 
       |> Program.withConsoleTrace
       |> Program.runWindowWithConfig

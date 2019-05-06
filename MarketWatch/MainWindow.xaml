@@ -8,6 +8,7 @@
     xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:views="clr-namespace:Views;assembly=MarketWatch"
     Title="Market Watch"
     TitleCharacterCasing="Normal"
     Width="450"
@@ -51,18 +52,7 @@
 
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Controls:Flyout 
-                Header="Settings" 
-                Position="Right" 
-                Width="300"
-                Theme="Accent"
-                IsOpen="{Binding SettingsFlyoutIsOpen}">
-                <Controls:ToggleSwitch 
-                    IsChecked="True"
-                    OnLabel="Enabled"
-                    OffLabel="Disabled"
-                    Style="{DynamicResource MahApps.Metro.Styles.ToggleSwitch.Win10}"></Controls:ToggleSwitch>
-            </Controls:Flyout>
+            <views:SettingsFlyout Theme="Dark" />
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
 </Controls:MetroWindow>
