@@ -72,13 +72,13 @@
       <HintPath>packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
     </Reference>
     <Reference Include="Elmish">
-      <HintPath>packages\Elmish.2.0.0-beta-4\lib\net461\Elmish.dll</HintPath>
+      <HintPath>packages\Elmish.3.0.0\lib\net461\Elmish.dll</HintPath>
     </Reference>
     <Reference Include="Elmish.WPF">
-      <HintPath>packages\Elmish.WPF.2.0.0-beta-4\lib\net461\Elmish.WPF.dll</HintPath>
+      <HintPath>packages\Elmish.WPF.2.0.0\lib\net461\Elmish.WPF.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>packages\FSharp.Core.4.5.2\lib\net45\FSharp.Core.dll</HintPath>
+      <HintPath>packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="FsXaml.Wpf">
       <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.dll</HintPath>

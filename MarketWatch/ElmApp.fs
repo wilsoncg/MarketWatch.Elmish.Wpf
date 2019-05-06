@@ -12,16 +12,16 @@ module Main =
  }
  
  type Msg =
-     | SettingsClick
+     | SettingsClick of bool
  
  let update msg model =
     match msg with
-    | SettingsClick -> { model with SettingsFlyoutIsOpen = true }
+    | SettingsClick state -> { model with SettingsFlyoutIsOpen = state }
 
  let bindings model dispatch =
   [
-    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick)
-    "SettingsFlyoutIsOpen" |> Binding.oneWay (fun m -> m.SettingsFlyoutIsOpen)
+    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick true)
+    "SettingsFlyoutIsOpen" |> Binding.twoWay (fun m -> m.SettingsFlyoutIsOpen) (fun v m -> SettingsClick v)
   ]
 
 module ListItem =

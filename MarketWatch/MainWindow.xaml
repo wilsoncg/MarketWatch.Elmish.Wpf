@@ -13,6 +13,7 @@
     Height="800"
     FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
     WindowStartupLocation="CenterScreen"
+    RightWindowCommandsOverlayBehavior="Always"
     mc:Ignorable="d">
 
     <!-- icon browser https://materialdesignicons.com/ -->
@@ -31,7 +32,7 @@
             <dragablz:TabablzControl.InterTabController>
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
-            <TabItem Header="Tab No. 1" IsSelected="True">
+            <TabItem Header="Markets" IsSelected="True">
                 <TextBlock>First tab</TextBlock>
             </TabItem>
             <!--<dragablz:TabablzControl.HeaderItemTemplate>
@@ -53,7 +54,8 @@
                 Header="Settings" 
                 Position="Right" 
                 Width="300"
-                IsOpen="{Binding FlyoutSettingsIsOpen}">
+                Theme="Accent"
+                IsOpen="{Binding SettingsFlyoutIsOpen}">
                 <Controls:ToggleSwitch 
                     IsChecked="True"
                     OnLabel="Enabled"
