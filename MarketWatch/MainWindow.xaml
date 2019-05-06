@@ -7,6 +7,7 @@
     xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
     xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
     Title="Market Watch"
     TitleCharacterCasing="Normal"
     Width="450"

@@ -95,6 +95,9 @@
     <Reference Include="MaterialDesignColors">
       <HintPath>packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps">
+      <HintPath>packages\MaterialDesignThemes.MahApps.0.0.13-ci1366\lib\net45\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignThemes.Wpf">
       <HintPath>packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>

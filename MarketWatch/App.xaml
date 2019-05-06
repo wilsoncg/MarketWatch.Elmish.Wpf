@@ -12,8 +12,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <!-- https://mahapps.com/guides/styles.html -->
-                <!-- theme -->
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <!-- theme -->                
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <!-- Icon pack -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro.IconPacks.Material;component/Themes/PackIconMaterial.xaml" />
@@ -22,19 +21,34 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/primary/materialdesigncolor.blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/accent/materialdesigncolor.amber.xaml" />
+                <!-- Material Design: MahApps Compatibility -->
+                <!-- https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/tree/master/MaterialDesignThemes.MahApps/ -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml "/>
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- MahApps Brushes -->
+            <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}"/>
+            <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}"/>
+            <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}"/>
+            <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{DynamicResource Primary100}"/>
+            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{DynamicResource Primary100Foreground}"/>
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{DynamicResource Primary700Foreground}"/>
+            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{DynamicResource Accent200}"/>
+            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{DynamicResource Accent200Foreground}"/>
             
-            <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{StaticResource Primary700}"/>
-            <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{StaticResource Primary500Foreground}"/>
-            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary100}"/>
-            <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary100Foreground}"/>
-            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
-            <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500Foreground}"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
-            <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
-            <SolidColorBrush x:Key="SecondaryAccentBrush" Color="{StaticResource Accent200}"/>
-            <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="{StaticResource Accent200Foreground}"/>
+            <!-- win10 toggle buttons -->
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10" Color="{DynamicResource Primary500}" />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10" Color="{DynamicResource Primary700}"  />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10" Color="{DynamicResource Primary500Foreground}" />
 
             <!-- tell Dragablz tab control to use the Material Design theme -->
             <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
