@@ -56,11 +56,12 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Resource Include="Views\TradesGrid.xaml" />
+    <Resource Include="Views\SettingsFlyoutView.xaml" />
+    <Compile Include="Views\SettingsFlyoutView.xaml.fs" />
     <Compile Include="AssemblyInfo.fs" />
     <Resource Include="App.xaml" />
     <Resource Include="MainWindow.xaml" />
-    <Compile Include="MainWindow.xaml.fs" />
-    <Compile Include="App.fs" />
+    <Compile Include="ElmApp.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
@@ -73,13 +74,13 @@
       <HintPath>packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
     </Reference>
     <Reference Include="Elmish">
-      <HintPath>packages\Elmish.2.0.0-beta-4\lib\net461\Elmish.dll</HintPath>
+      <HintPath>packages\Elmish.3.0.0\lib\net461\Elmish.dll</HintPath>
     </Reference>
     <Reference Include="Elmish.WPF">
-      <HintPath>packages\Elmish.WPF.2.0.0-beta-4\lib\net461\Elmish.WPF.dll</HintPath>
+      <HintPath>packages\Elmish.WPF.2.0.0\lib\net461\Elmish.WPF.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>packages\FSharp.Core.4.5.2\lib\net45\FSharp.Core.dll</HintPath>
+      <HintPath>packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="FsXaml.Wpf">
       <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.dll</HintPath>
@@ -88,10 +89,16 @@
       <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.TypeProvider.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <HintPath>packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material">
+      <HintPath>packages\MahApps.Metro.IconPacks.Material.2.3.0\lib\net46\MahApps.Metro.IconPacks.Material.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors">
       <HintPath>packages\MaterialDesignColors.1.1.1\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps">
+      <HintPath>packages\MaterialDesignThemes.MahApps.0.0.13-ci1366\lib\net45\MaterialDesignThemes.MahApps.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf">
       <HintPath>packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
@@ -118,7 +125,7 @@
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
-      <HintPath>packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />

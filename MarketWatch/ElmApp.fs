@@ -1,6 +1,28 @@
-﻿module App
-
+﻿module ElmApp
 open Elmish.WPF
+open Elmish
+
+module Main =
+ type Model = { 
+    SettingsFlyoutIsOpen: bool
+    DarkMode: bool }
+ let init() = {
+    SettingsFlyoutIsOpen = false
+    DarkMode = false
+ }
+ 
+ type Msg =
+     | SettingsClick of bool
+ 
+ let update msg model =
+    match msg with
+    | SettingsClick state -> { model with SettingsFlyoutIsOpen = state }
+
+ let bindings model dispatch =
+  [
+    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick true)
+    "SettingsFlyoutIsOpen" |> Binding.twoWay (fun m -> m.SettingsFlyoutIsOpen) (fun v m -> SettingsClick v)
+  ]
 
 module ListItem =
   

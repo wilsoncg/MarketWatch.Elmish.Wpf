@@ -3,13 +3,12 @@ open System.Reactive
 open System.Reactive.Linq
 open Elmish
 open Elmish.WPF
-open FsXaml
-open MahApps.Metro.Controls
-open App
+open ElmApp
+open Views
 
 module Window =
-    type App = XAML<"App.xaml">
-    type MainWindow = MainWindow.MainWindow
+    type App = FsXaml.XAML<"App.xaml">
+    type MainWindow = FsXaml.XAML<"MainWindow.xaml">
 
     let o = 
         Observable
@@ -26,11 +25,10 @@ module Window =
 
     [<EntryPoint; STAThread>]
     let main argv =
-      let window = MainWindow()
-      App().MainWindow <- window      
-      Program.mkSimple MainWindow.init MainWindow.update MainWindow.bindings 
+      App() |> ignore
+      SettingsFlyout() |> ignore
+      Program.mkSimple Main.init Main.update Main.bindings 
       |> Program.withConsoleTrace
-      //|> Program.withSubscription (fun _ -> Cmd.ofSub timerTick)
       |> Program.runWindowWithConfig
           { ElmConfig.Default with LogConsole = true }
-          (window)
+          (MainWindow())
