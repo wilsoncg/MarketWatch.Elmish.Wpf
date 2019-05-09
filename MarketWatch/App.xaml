@@ -3,8 +3,7 @@
              xmlns:views="clr-namespace:MarketWatch.Views"
              xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
              xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
-             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-             StartupUri="MainWindow.xaml">
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
 
     <Application.Resources>
         <ResourceDictionary>
