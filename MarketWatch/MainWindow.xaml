@@ -35,18 +35,8 @@
                 <dragablz:InterTabController/>
             </dragablz:TabablzControl.InterTabController>
             <TabItem Header="Markets" IsSelected="True">
-                <TextBlock>First tab</TextBlock>
+                <views:TradesGrid />
             </TabItem>
-            <!--<dragablz:TabablzControl.HeaderItemTemplate>
-                <DataTemplate DataType="{x:Type ViewContainer}">
-                    <TextBlock Margin="8,0,0,0" Text="{Binding Title}" />
-                </DataTemplate>
-            </dragablz:TabablzControl.HeaderItemTemplate>
-            <TabControl.ContentTemplate>
-                <DataTemplate DataType="{x:Type ViewContainer}">
-                    <ContentControl Margin="4" Content="{Binding Content}" />
-                </DataTemplate>
-            </TabControl.ContentTemplate>-->
         </dragablz:TabablzControl>
     </dockablz:Layout>
 

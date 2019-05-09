@@ -55,7 +55,8 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Resource Include="Views\TradesGrid.xaml" />
+    <Resource Include="Views\TradesGridView.xaml" />
+    <Compile Include="Views\TradesGridView.xaml.fs" />
     <Resource Include="Views\SettingsFlyoutView.xaml" />
     <Compile Include="Views\SettingsFlyoutView.xaml.fs" />
     <Compile Include="AssemblyInfo.fs" />
