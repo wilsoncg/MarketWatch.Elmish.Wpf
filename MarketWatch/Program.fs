@@ -21,7 +21,7 @@ module Window =
             fun (timestamp, price) -> 
             let rounded = Math.Round(price, 2)
             let id = Random().Next(100)
-            dispatch <| MarketList.Msg.UpdatePrice (id, decimal rounded)) |> ignore        
+            dispatch <| TradesGrid.Msg.UpdatePrice (id, decimal rounded)) |> ignore        
 
     [<EntryPoint; STAThread>]
     let main argv =
