@@ -2,29 +2,7 @@
 open Elmish.WPF
 open Elmish
 
-module Main =
- type Model = { 
-    SettingsFlyoutIsOpen: bool
-    DarkMode: bool }
- let init() = {
-    SettingsFlyoutIsOpen = false
-    DarkMode = false
- }
- 
- type Msg =
-     | SettingsClick of bool
- 
- let update msg model =
-    match msg with
-    | SettingsClick state -> { model with SettingsFlyoutIsOpen = state }
-
- let bindings model dispatch =
-  [
-    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick true)
-    "SettingsFlyoutIsOpen" |> Binding.twoWay (fun m -> m.SettingsFlyoutIsOpen) (fun v m -> SettingsClick v)
-  ]
-
-module ListItem =
+module TradeItem =
   
  type Market = { 
     Id: int
@@ -48,17 +26,16 @@ module ListItem =
     "Price" |> Binding.oneWay (fun m -> m.Price)
   ] 
 
-module MarketList =
- open System.Windows.Forms
+module TradesGrid =
 
  type Model = {
-    Markets: list<ListItem.Market> }
+    Markets: list<TradeItem.Market> }
         
  let init() = {
-    Markets = Seq.empty<ListItem.Market> |> Seq.toList }
+    Markets = Seq.empty<TradeItem.Market> |> Seq.toList }
 
  let private findMarket (m:Model) id =
-  let matchId = (fun (x:ListItem.Market) -> x.Id = id)
+  let matchId = (fun (x:TradeItem.Market) -> x.Id = id)
   match m.Markets |> List.exists matchId with
   | true -> Some (m.Markets |> List.find matchId)
   | false -> None
@@ -79,16 +56,42 @@ module MarketList =
           let market = { x with Price = price; Id = id }
           {model with Markets = updateElement model.Markets (fun m -> if m.Id = id then market else m ) }
          | None -> 
-          { model with Markets = model.Markets @ [ListItem.newMarket id price] }
+          { model with Markets = model.Markets @ [TradeItem.newMarket id price] }
     | ColumnHeaderClick -> model
     | ParentMsg (id, msg) -> model
 
  let bindings model dispatch =
   [
-    "Markets" |> Binding.subModelSeq 
-        (fun m -> m.Markets)
-        (fun cm -> cm.Id)
-        (fun () -> ListItem.bindings ())
-        ParentMsg
     "ColumnHeaderClick" |> Binding.paramCmd (fun p m -> ColumnHeaderClick)
+  ]
+
+module Main =
+ type Model = { 
+    SettingsFlyoutIsOpen: bool
+    DarkMode: bool
+    TradesGrid: TradesGrid.Model }
+ let init() = {
+    SettingsFlyoutIsOpen = false
+    DarkMode = false
+    TradesGrid = TradesGrid.init()
+ }
+ 
+ type Msg =
+     | SettingsClick of bool
+     | TradesGridMsg of int * Msg
+ 
+ let update msg model =
+    match msg with
+    | SettingsClick state -> { model with SettingsFlyoutIsOpen = state }
+    | TradesGridMsg (id, msg) -> model
+
+ let bindings model dispatch =
+  [
+    "SettingsClick" |> Binding.paramCmd (fun p m -> SettingsClick true)
+    "SettingsFlyoutIsOpen" |> Binding.twoWay (fun m -> m.SettingsFlyoutIsOpen) (fun v m -> SettingsClick v)
+    "Markets" |> Binding.subModelSeq 
+        (fun m -> m.TradesGrid.Markets)
+        (fun cm -> cm.Id)
+        (fun () -> TradeItem.bindings ())
+        TradesGridMsg
   ]
